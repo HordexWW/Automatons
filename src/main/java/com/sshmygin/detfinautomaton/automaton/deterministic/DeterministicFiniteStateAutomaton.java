@@ -23,12 +23,13 @@ public class DeterministicFiniteStateAutomaton extends FiniteStateAutomaton {
     public DeterministicFiniteStateAutomaton(Set<Integer> automatonStateSet,
                                              List<String> alphabet,
                                              Integer beginningState,
-                                             Set<Integer> endingStateSet,
+                                             List<Integer> endingStateSet,
                                              Map<Integer, List<Integer>> transitionTable) {
         super(automatonStateSet, alphabet, beginningState, endingStateSet);
         this.transitionTable = transitionTable;
     }
 
+    @Override
     public boolean wordAcceptable(String word) {
 
         System.out.println("word: " + word);
@@ -36,18 +37,18 @@ public class DeterministicFiniteStateAutomaton extends FiniteStateAutomaton {
         int currentState = this.getBeginningState();
         String[] input = word.split("");
 
-        try {
-            for(String symbol: input) {
-                int index = getAlphabet().indexOf(symbol);
+        for (String symbol : input) {
+            int index = alphabet.indexOf(symbol);
 
-                int previousState = currentState;
+            int previousState = currentState;
+            if (transitionTable.containsKey(currentState)) {
                 currentState = transitionTable.get(currentState).get(index);
                 System.out.println(previousState + " -> " + currentState);
+            } else {
+                return false;
             }
-        } catch (NullPointerException e) {
-            return false;
         }
-        
+
         boolean result = false;
 
         for (int i = 0; i < endingStateSet.size(); i++) {

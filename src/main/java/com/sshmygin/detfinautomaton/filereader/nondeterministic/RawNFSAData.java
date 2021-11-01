@@ -1,12 +1,12 @@
-package com.sshmygin.detfinautomaton.filereader;
+package com.sshmygin.detfinautomaton.filereader.nondeterministic;
 
 import java.util.List;
 
 @lombok.Data
-public class Data {
+public class RawNFSAData {
     private int numOfStates;
     private List<String> alphabet;
-    private List<List<Integer>> transitionTable;
+    private List<List<List<Integer>>> transitionTable;
     private Integer beginningState;
     private List<Integer> endingStateSet;
 }

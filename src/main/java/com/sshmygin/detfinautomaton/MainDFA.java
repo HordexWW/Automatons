@@ -1,17 +1,17 @@
 package com.sshmygin.detfinautomaton;
 
-import com.sshmygin.detfinautomaton.automaton.DFSAData;
+import com.sshmygin.detfinautomaton.automaton.deterministic.DFSAData;
 import com.sshmygin.detfinautomaton.automaton.deterministic.DeterministicFiniteStateAutomaton;
-import com.sshmygin.detfinautomaton.filereader.Data;
-import com.sshmygin.detfinautomaton.filereader.TXTPropertyReader;
+import com.sshmygin.detfinautomaton.filereader.deterministic.RawDFSAData;
+import com.sshmygin.detfinautomaton.filereader.deterministic.DFSAPropertyReader;
 import com.sshmygin.detfinautomaton.handler.AutomatonDataHandler;
 
-public class Main {
+public class MainDFA {
     public static void main(String[] args) {
         String path = "/Users/sshmygin/Documents/projects/SSU/DetFinAutomate/src/main/resources/inputData.txt";
 
-        TXTPropertyReader reader = new TXTPropertyReader();
-        Data automatonProperties = reader.getAutomatonProperties(path);
+        DFSAPropertyReader reader = new DFSAPropertyReader();
+        RawDFSAData automatonProperties = reader.getAutomatonProperties(path);
 
         AutomatonDataHandler automatonDataHandler = new AutomatonDataHandler();
         DFSAData data = automatonDataHandler.getDFSAData(automatonProperties);
@@ -19,7 +19,7 @@ public class Main {
         System.out.println(data);
 
         DeterministicFiniteStateAutomaton automaton = new DeterministicFiniteStateAutomaton(
-                data.getEndingStateSet(),
+                data.getAutomatonStateSet(),
                 data.getAlphabet(),
                 data.getBeginningState(),
                 data.getEndingStateSet(),

@@ -1,4 +1,4 @@
-package com.sshmygin.detfinautomaton.automaton;
+package com.sshmygin.detfinautomaton.automaton.deterministic;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,6 +15,6 @@ public class DFSAData {
     private Set<Integer> automatonStateSet;
     private List<String> alphabet;
     private Integer beginningState;
-    private Set<Integer> endingStateSet;
+    private List<Integer> endingStateSet;
     private Map<Integer, List<Integer>> transitionTable;
 }

@@ -1,4 +1,4 @@
-package com.sshmygin.detfinautomaton.filereader;
+package com.sshmygin.detfinautomaton.filereader.deterministic;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,11 +6,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class TXTPropertyReader {
-    public Data getAutomatonProperties(String filename) {
-        Data data = new Data();
+public class DFSAPropertyReader {
+    public RawDFSAData getAutomatonProperties(String filename) {
+        RawDFSAData data = new RawDFSAData();
         try (BufferedReader fis = new BufferedReader(new FileReader(filename))) {
             data.setNumOfStates(Integer.parseInt(fis.readLine()));
             data.setAlphabet(Arrays.stream(fis.readLine().split(" ")).toList());
