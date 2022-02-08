@@ -1,4 +1,4 @@
-package com.sshmygin.detfinautomaton.filereader.nondeterministic;
+package com.sshmygin.automatons.filereader.nondeterministic;
 
 import java.util.List;
 

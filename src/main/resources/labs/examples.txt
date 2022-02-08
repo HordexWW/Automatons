@@ -1,0 +1,17 @@
+lab 1
+begiN DO inpUt i; a = i + a lOOp until a < 10 end
+
+lab 2
+DO inpUt i; a = i + a lOOp until a < 10
+DO inpUt i; a = i + a lOOp a < 10
+inpUt i; a = i + a lOOp until a < 10
+do inpUt i; a = i + a lOOp until a 10
+
+lab 3
+begiN DO inpUt i; a = i * a loop until a < 16 end
+
+lab 4
+begin do i = i + 1; a = a / 2 loop until i < 3 and a > 8 end
+...
+i i 1 ADD SET a a 2 DIV SET i 3 CMPL a 8 CMPG AND 21 JZ 0 JMP
+

@@ -1,13 +1,12 @@
-package com.sshmygin.detfinautomaton.automaton.deterministic;
+package com.sshmygin.automatons.automaton.deterministic;
 
-import com.sshmygin.detfinautomaton.automaton.FiniteStateAutomaton;
+import com.sshmygin.automatons.automaton.FiniteStateAutomaton;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 @Getter
 @Setter
@@ -20,13 +19,9 @@ public class DeterministicFiniteStateAutomaton extends FiniteStateAutomaton {
         super();
     }
 
-    public DeterministicFiniteStateAutomaton(Set<Integer> automatonStateSet,
-                                             List<String> alphabet,
-                                             Integer beginningState,
-                                             List<Integer> endingStateSet,
-                                             Map<Integer, List<Integer>> transitionTable) {
-        super(automatonStateSet, alphabet, beginningState, endingStateSet);
-        this.transitionTable = transitionTable;
+    public DeterministicFiniteStateAutomaton(DFSAData data) {
+        super(data.getAutomatonStateSet(), data.getAlphabet(), data.getBeginningState(), data.getEndingStateSet());
+        this.transitionTable = data.getTransitionTable();
     }
 
     @Override

@@ -1,10 +1,11 @@
-package com.sshmygin.detfinautomaton;
+package com.sshmygin.automatons;
 
-import com.sshmygin.detfinautomaton.automaton.deterministic.DFSAData;
-import com.sshmygin.detfinautomaton.automaton.deterministic.DeterministicFiniteStateAutomaton;
-import com.sshmygin.detfinautomaton.filereader.deterministic.RawDFSAData;
-import com.sshmygin.detfinautomaton.filereader.deterministic.DFSAPropertyReader;
-import com.sshmygin.detfinautomaton.handler.AutomatonDataHandler;
+import com.sshmygin.automatons.automaton.FiniteStateAutomaton;
+import com.sshmygin.automatons.automaton.deterministic.DFSAData;
+import com.sshmygin.automatons.automaton.deterministic.DeterministicFiniteStateAutomaton;
+import com.sshmygin.automatons.filereader.deterministic.RawDFSAData;
+import com.sshmygin.automatons.filereader.deterministic.DFSAPropertyReader;
+import com.sshmygin.automatons.handler.AutomatonDataHandler;
 
 public class MainDFA {
     public static void main(String[] args) {
@@ -18,13 +19,7 @@ public class MainDFA {
 
         System.out.println(data);
 
-        DeterministicFiniteStateAutomaton automaton = new DeterministicFiniteStateAutomaton(
-                data.getAutomatonStateSet(),
-                data.getAlphabet(),
-                data.getBeginningState(),
-                data.getEndingStateSet(),
-                data.getTransitionTable()
-                );
+        FiniteStateAutomaton automaton = new DeterministicFiniteStateAutomaton(data);
 
         String y1 = "bcabcabca";
         String n1 = "bccc";

@@ -1,20 +1,16 @@
-package com.sshmygin.detfinautomaton.automaton.deterministic;
+package com.sshmygin.automatons.automaton.nondeterministic;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class DFSAData {
+public class NFSAData {
     private Set<Integer> automatonStateSet;
     private List<String> alphabet;
     private Integer beginningState;
     private List<Integer> endingStateSet;
-    private Map<Integer, List<Integer>> transitionTable;
+    private Map<Integer, List<List<Integer>>> transitionTable;
 }

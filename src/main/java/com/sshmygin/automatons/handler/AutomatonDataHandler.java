@@ -1,9 +1,9 @@
-package com.sshmygin.detfinautomaton.handler;
+package com.sshmygin.automatons.handler;
 
-import com.sshmygin.detfinautomaton.automaton.deterministic.DFSAData;
-import com.sshmygin.detfinautomaton.automaton.nondeterministic.NFSAData;
-import com.sshmygin.detfinautomaton.filereader.deterministic.RawDFSAData;
-import com.sshmygin.detfinautomaton.filereader.nondeterministic.RawNFSAData;
+import com.sshmygin.automatons.automaton.deterministic.DFSAData;
+import com.sshmygin.automatons.automaton.nondeterministic.NFSAData;
+import com.sshmygin.automatons.filereader.deterministic.RawDFSAData;
+import com.sshmygin.automatons.filereader.nondeterministic.RawNFSAData;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.sshmygin.detfinautomaton.automaton;
+package com.sshmygin.automatons.automaton;
 
 import lombok.Getter;
 import lombok.Setter;
